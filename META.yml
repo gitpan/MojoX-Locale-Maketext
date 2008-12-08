@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                MojoX-Locale-Maketext
-version:             0.01
+version:             0.02
 abstract:            Locale::Maketext implementation
 license:             perl
 author:              
