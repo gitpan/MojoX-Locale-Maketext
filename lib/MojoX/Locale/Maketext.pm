@@ -8,12 +8,12 @@ use base 'Mojo::Base';
 require Carp;
 require Locale::Maketext;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
-__PACKAGE__->attr('_class');
-__PACKAGE__->attr('language');
-__PACKAGE__->attr('language_tag');
-__PACKAGE__->attr('_handle');
+__PACKAGE__->attr(_class       => (chained => 0));
+__PACKAGE__->attr(language     => (chained => 0));
+__PACKAGE__->attr(language_tag => (chained => 0));
+__PACKAGE__->attr(_handle      => (chained => 0));
 
 sub setup {
     my $self = shift;
@@ -25,6 +25,7 @@ sub setup {
     my $subclass = $options{subclass} || 'I18N';
 
     my $class = $self->_class($namespace . '::' . $subclass);
+
     eval <<"";
         package $class;
         use base 'Locale::Maketext';
@@ -38,7 +39,7 @@ sub setup {
 sub languages {
     my $self = shift;
 
-    my $class = $self->_class;
+    my $class  = $self->_class;
     my $handle = $self->_handle($class->get_handle(@{$_[0]}));
 
     my $lang = ref $handle;
