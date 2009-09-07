@@ -1,5 +1,8 @@
 Revision history for MojoX-Locale-Maketext
 
+0.05    2009-09-09 00:00:00
+        - Fixes due to Mojo update
+
 0.04    2009-07-22 00:00:00
         - mojo default chained attributes update
 

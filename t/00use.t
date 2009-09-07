@@ -3,5 +3,5 @@
 use Test::More tests => 1;
 
 BEGIN {
-	use_ok( 'MojoX::Locale::Maketext' );
+    use_ok( 'MojoX::Locale::Maketext' );
 }

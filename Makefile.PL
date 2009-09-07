@@ -4,7 +4,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME          => 'MojoX::Locale::Maketext',
-    AUTHOR        => 'Viacheslav Tikhanovskii <vti@cpan.org>',
+    AUTHOR        => 'Viacheslav Tykhanovskyi <vti@cpan.org>',
     VERSION_FROM  => 'lib/MojoX/Locale/Maketext.pm',
     ABSTRACT_FROM => 'lib/MojoX/Locale/Maketext.pm',
     ($ExtUtils::MakeMaker::VERSION >= 6.3002
@@ -13,7 +13,7 @@ WriteMakefile(
     PL_FILES  => {},
     PREREQ_PM => {
         'Test::More'       => 0,
-        'Mojo'             => 0,
+        'Mojo'             => '0.991250',
         'Locale::Maketext' => 0
     },
     dist  => {COMPRESS => 'gzip -9f', SUFFIX => 'gz'},
