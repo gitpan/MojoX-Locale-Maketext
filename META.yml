@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               MojoX-Locale-Maketext
-version:            0.05
+version:            0.06
 abstract:           Locale::Maketext implementation
 author:
     - Viacheslav Tykhanovskyi <vti@cpan.org>

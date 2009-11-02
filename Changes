@@ -1,5 +1,9 @@
 Revision history for MojoX-Locale-Maketext
 
+0.06    2009-11-02 00:00:00
+        - Fixed situation when there is no handle
+        - Added more tests
+
 0.05    2009-09-09 00:00:00
         - Fixes due to Mojo update
 

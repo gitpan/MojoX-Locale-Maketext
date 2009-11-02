@@ -17,11 +17,11 @@ package main;
 use strict;
 use warnings;
 
-use Test::More tests => 8;
+use Test::More tests => 11;
 
 use_ok('MojoX::Locale::Maketext');
 
-my $i18n = MojoX::Locale::Maketext->new();
+my $i18n = MojoX::Locale::Maketext->new;
 
 $i18n->setup(namespace => 'MyTest', subclass => 'I18N');
 
@@ -32,6 +32,11 @@ is($i18n->loc('Hello'),      'Hallo');
 is($i18n->localize('Hello'), 'Hallo');
 
 $i18n->languages(['en']);
+is($i18n->language,     'en');
+is($i18n->language_tag, 'en');
+is($i18n->loc('Hello'), 'Hello');
+
+$i18n->languages(['C']);
 is($i18n->language,     'en');
 is($i18n->language_tag, 'en');
 is($i18n->loc('Hello'), 'Hello');

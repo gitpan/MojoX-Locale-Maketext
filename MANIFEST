@@ -3,8 +3,10 @@ lib/MojoX/Locale/Maketext.pm
 Makefile.PL
 MANIFEST			This list of files
 MANIFEST.SKIP
+MojoX-Locale-Maketext-0.06.tar.gz
 t/00use.t
 t/01pod.t
 t/02pod-coverage.t
+t/empty.t
 t/i18n.t
 META.yml                                 Module meta-data (added by MakeMaker)

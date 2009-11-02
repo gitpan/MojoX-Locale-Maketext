@@ -8,7 +8,7 @@ use base 'Mojo::Base';
 require Carp;
 require Locale::Maketext;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 __PACKAGE__->attr('language');
 __PACKAGE__->attr('language_tag');
@@ -41,13 +41,18 @@ sub languages {
     my $self = shift;
 
     my $class  = $self->_class;
-    my $handle = $self->_handle($class->get_handle(@{$_[0]}))->_handle;
 
-    my $lang = ref $handle;
-    $lang =~ s/^.*::// if $lang;
+    if (my $handle = $self->_handle($class->get_handle(@{$_[0]}))->_handle) {
+        my $lang = ref $handle;
+        $lang =~ s/^.*::// if $lang;
 
-    $self->language($lang);
-    $self->language_tag($handle->language_tag);
+        $self->language($lang);
+        $self->language_tag($handle->language_tag);
+    }
+    else {
+        $self->language('en');
+        $self->language_tag('en');
+    }
 
     return $self;
 }
@@ -61,7 +66,7 @@ sub localize {
 
     return $handle->maketext(@_) if $handle;
 
-    return @_;
+    return join('', @_);
 }
 
 1;
